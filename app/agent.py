@@ -284,7 +284,7 @@ async def security_alert_node(ctx: Context):
 # 7. Human Review HITL Node
 class HumanReviewResponse(BaseModel):
     approved: bool = Field(description="Set to true if summary is approved, false if revisions are needed.")
-    feedback: str = Field(default="", description="Required changes or suggestions if not approved.")
+    feedback: Optional[str] = Field(default="", description="Required changes or suggestions if not approved.")
 
 @node(rerun_on_resume=True)
 async def human_review(ctx: Context):
@@ -294,15 +294,19 @@ async def human_review(ctx: Context):
     if interrupt_id in ctx.resume_inputs:
         user_input = ctx.resume_inputs[interrupt_id]
         
-        # Parse inputs
+        # Parse inputs safely
         approved = True
         feedback = ""
         if isinstance(user_input, dict):
-            approved = user_input.get("approved", True)
-            feedback = user_input.get("feedback", "")
-        else:
+            approved = user_input.get("approved")
+            if approved is None:
+                approved = True
+            feedback = user_input.get("feedback") or ""
+        elif user_input is not None:
             approved = getattr(user_input, "approved", True)
-            feedback = getattr(user_input, "feedback", "")
+            if approved is None:
+                approved = True
+            feedback = getattr(user_input, "feedback", "") or ""
             
         ctx.state["approved"] = approved
         ctx.state["feedback"] = feedback
