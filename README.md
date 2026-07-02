@@ -1,5 +1,7 @@
 # 📄 Scientific Paper Analyzer
 
+![Cover Page Banner](assets/cover_page_banner.png)
+
 > An AI-powered multi-agent system that reads scientific PDFs, extracts structured insights, generates a research summary, and saves a formatted report — all with human-in-the-loop approval and built-in security.
 
 ---
@@ -27,6 +29,8 @@ make playground             # opens interactive UI at http://localhost:18081
 ---
 
 ## Architecture
+
+![Architecture Diagram](assets/architecture_diagram.png)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
