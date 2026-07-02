@@ -184,3 +184,14 @@ __pycache__/
 ```
 
 > ⚠️ **NEVER push `.env` to GitHub. Your API key will be exposed publicly.**
+
+---
+
+## Assets
+
+### Cover Page Banner
+![Cover Page Banner](assets/cover_page_banner.png)
+
+### Architecture Diagram
+![Architecture Diagram](assets/architecture_diagram.png)
+
