@@ -28,6 +28,31 @@ make playground             # opens interactive UI at http://localhost:18081
 
 ---
 
+## ✨ Key Features
+
+- 🤖 Multi-Agent Architecture built with Google ADK
+- 🔌 MCP Server for secure local file operations
+- 🛡️ Security validation with prompt injection and PII detection
+- 👨‍💻 Human-in-the-Loop approval before generating the final report
+- 📄 Automatic scientific paper summarization
+- 📝 Markdown report generation
+
+---
+
+## 🛠 Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Core programming language |
+| Google ADK | Multi-agent framework |
+| Gemini API | LLM inference |
+| MCP | Secure communication with local tools |
+| Streamlit | Interactive web interface |
+| PyMuPDF | PDF text extraction |
+| Markdown | Report generation |
+
+---
+
 ## Architecture
 
 ![Architecture Diagram](assets/architecture_diagram.png)
